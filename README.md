@@ -1,5 +1,13 @@
 # array_object_RsSchool
 ===
+
+
+Your task is to write a function that takes two or more objects and returns a new object which combines all the input objects.
+
+All input object properties will have only numeric values. Objects are combined together so that the values of matching keys are added together.
+
+An example:
+===
 аша задача состоит в том, чтобы написать функцию, которая принимает два или более объекта и возвращает новый объект, объединяющий все входные объекты.
 
 Все свойства входного объекта будут иметь только числовые значения. Объекты объединяются вместе таким образом, чтобы значения соответствующих ключей складывались вместе.
