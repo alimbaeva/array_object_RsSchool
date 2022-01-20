@@ -1,0 +1,1 @@
+# array_object_RsSchool
