@@ -151,3 +151,56 @@ function getDecimal(n){
   return Math.abs(n%1)
 }
 ```
+
+
+
+
+Task
+Given an array/list [] of n integers , find maximum triplet sum in the array Without duplications .
+===
+Notes :
+Array/list size is at least 3 .
+===
+Array/list numbers could be a mixture of positives , negatives and zeros .
+===
+Repetition of numbers in the array/list could occur , So (duplications are not included when summing).
+===
+
+
+```
+function maxTriSum(numbers) {
+            numbers.sort((a, b) => b - a);
+            let numberND = [];
+            for (let i = 0, y = 1; i < numbers.length; i++, y++) {
+                if (numbers[i] !== numbers[y] && numbers[y] !== null) {
+                    numberND.push(numbers[i])
+                } else {
+                    i++;
+                    y++;
+                    numberND.push(numbers[i])
+                }
+            }
+            let i = 0;
+            let sum = 0;
+            while (i !== 3) {
+                sum += numberND[i];
+                i++;
+            }
+            return sum;
+
+        }
+
+```
+
+```
+    assert.strictEqual(maxTriSum([3,2,6,8,2,3]),17);
+    assert.strictEqual(maxTriSum([2,9,13,10,5,2,9,5]),32);
+    assert.strictEqual(maxTriSum([2,1,8,0,6,4,8,6,2,4]),18);
+    assert.strictEqual(maxTriSum([-3,-27,-4,-2,-27,-2]),-9);
+    assert.strictEqual(maxTriSum([-14,-12,-7,-42,-809,-14,-12]),-33);
+    assert.strictEqual(maxTriSum([-13,-50,57,13,67,-13,57,108,67]),232);
+    assert.strictEqual(maxTriSum([-7,12,-7,29,-5,0,-7,0,0,29]),41);
+    assert.strictEqual(maxTriSum([-2,0,2]),0);
+    assert.strictEqual(maxTriSum([-2,-4,0,-9,2]),0);
+    assert.strictEqual(maxTriSum([-5,-1,-9,0,2]),1);
+```
